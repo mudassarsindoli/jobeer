@@ -1865,6 +1865,11 @@ export const categories = [
         careersUrl: "https://careers.equinix.com/jobs/search?query={query}",
         logo: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Equinix_logo.svg/1280px-Equinix_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
       },
+      {
+        name: "PwC India",
+        careersUrl: "https://www.pwc.in/careers/experienced-jobs.html",
+        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIebv5V77ybaN5u0HlMmb9XNHX2Sqt2SoZKCsONacVsg&s",
+      },
     ],
   },
 ];
