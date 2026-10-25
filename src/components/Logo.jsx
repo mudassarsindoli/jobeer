@@ -1,28 +1,29 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-export default function Logo({ company, className = 'h-12 w-12', tileClass = '' }) {
-  const [failed, setFailed] = useState(false)
-  const showFallback = failed || !company.logo
+export default function Logo({ company, className = "h-12 w-12" }) {
+  const [failed, setFailed] = useState(false);
 
   return (
     <div
-      className={`flex ${className} shrink-0 items-center justify-center overflow-hidden rounded-xl bg-zinc-50 px-1.5 ring-1 ring-zinc-100 sm:px-3 dark:bg-zinc-800/60 dark:ring-zinc-800 ${tileClass}`}
+      className={`flex ${className} shrink-0 items-center justify-center overflow-hidden rounded-xl bg-zinc-50 p-1.5 ring-1 ring-zinc-100`}
     >
-      {showFallback ? (
-        <span className="text-lg font-semibold tracking-tight text-zinc-400 select-none dark:text-zinc-500">
+      {failed || !company.logo ? (
+        <span
+          className="text-sm font-semibold tracking-tight text-zinc-400 select-none"
+          aria-hidden="true"
+        >
           {company.initials}
         </span>
       ) : (
         <img
           src={company.logo}
-          alt={`${company.name} logo`}
+          alt=""
           loading="lazy"
           decoding="async"
           onError={() => setFailed(true)}
-          style={{ maxWidth: `${company.logoWidth}px` }}
-          className="max-h-full max-w-full object-contain"
+          className="h-full w-full object-contain"
         />
       )}
     </div>
-  )
+  );
 }
